@@ -60,6 +60,16 @@ class IceCreamControl extends React.Component {
     })
   }
 
+  handleDeletingIceCream = (id) => {
+    const newMainIceCreamList = this.state.mainIceCreamList.filter(
+      (iceCream) => iceCream.id !== id
+    );
+    this.setState({
+      mainIceCreamList: newMainIceCreamList,
+      selectedIceCream: null,
+    })
+  }
+
 
 }
 
