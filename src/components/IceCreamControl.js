@@ -16,6 +16,20 @@ class IceCreamControl extends React.Component {
     };
   }
 
+  handleClick = () => {
+    if (this.state.selectedIceCream != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedIceCream: null,
+        editing: false,
+      });
+    } else {
+      this.setState((prevState) => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage,
+      }))
+    }
+  };
+
 
 
 }
