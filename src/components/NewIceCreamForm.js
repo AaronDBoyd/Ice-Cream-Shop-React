@@ -9,7 +9,7 @@ function NewIceCreamForm(props) {
     props.onNewIceCreamCreation({
       flavor: event.target.flavor.value,
       price: parseInt(event.target.price.value),
-      description: event.target.decription.value,
+      description: event.target.description.value,
       quantity: parseInt(event.target.quantity.value),
       id: v4(),
     });
