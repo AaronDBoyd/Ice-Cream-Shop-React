@@ -99,6 +99,52 @@ class IceCreamControl extends React.Component {
     })
   }
 
+  render() {
+    let currentlyVisibleState = null;
+    let buttonText = null;
+
+    if (this.state.editing) {
+      currentlyVisibleState = 
+      <EditIceCreamForm
+        iceCream={this.state.selectedIceCream}
+        onEditIceCream={this.handleEditingIceCreamInList}
+      />
+      buttonText = "View Ice Cream List";
+    } else if (this.state.selectedIceCream != null) {
+      currentlyVisibleState = (
+        <IceCreamDetail
+          iceCream={this.state.selectedIceCream}
+          onClickingDelete={this.handleDeletingIceCream}
+          onClickingEdit={this.handleEditClick}
+          onClickingRestock={this.handleRestockClick}
+        />
+      );
+      buttonText = "View Ice Cream List";
+    } else if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = (
+        <NewIceCreamForm onNewIceCreamCreation={this.handleAddingIceCreamToList} />
+      );
+      buttonText = "View Ice Cream List";
+    } else {
+      currentlyVisibleState = (
+        <IceCreamList
+          iceCreamList={this.state.mainIceCreamList}
+          onIceCreamSelection={this.handleChangingSelectedIceCream}
+          onClickingBuy={this.handleBuyingIceCream}
+        />
+      );
+      buttonText = "Add New Ice Cream";
+    }
+
+    return (
+      <React.Fragment>
+        {currentlyVisibleState}
+        <br />
+        <button onClick={this.handleClick}>{buttonText}</button> 
+      </React.Fragment>
+    );
+  }
+
 
 }
 
