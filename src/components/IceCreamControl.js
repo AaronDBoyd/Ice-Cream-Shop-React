@@ -38,6 +38,13 @@ class IceCreamControl extends React.Component {
     })
   }
 
+  handleChangingSelectedIceCream = (id) => {
+    const selectedIceCream = this.state.mainIceCreamList.filter(
+      (iceCream) => iceCream.id === id 
+    )[0];
+    this.setState({ selectedIceCream: selectedIceCream})
+  }
+
 
 
 }
