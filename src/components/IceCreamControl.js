@@ -85,6 +85,20 @@ class IceCreamControl extends React.Component {
     })
   }
 
+  handleRestockClick = (id) => {
+    const selectedItem = this.state.mainIceCreamList.filter((iceCream) => iceCream.id === id)[0]
+    selectedItem.quantity += 10;
+    const editedMainIceCreamList = this.state.mainIceCreamList.filter(
+      (iceCream) => iceCream.id !== id) 
+      .concat(selectedItem);
+
+    this.setState({
+      mainIceCreamList: editedMainIceCreamList,
+      editing: false,
+      selectedIceCream: null,
+    })
+  }
+
 
 }
 
