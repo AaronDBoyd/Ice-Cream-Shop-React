@@ -45,6 +45,9 @@ class IceCreamControl extends React.Component {
     this.setState({ selectedIceCream: selectedIceCream})
   }
 
+  handleEditClick = () => {
+    this.setState({ editing: true});
+  };
 
 
 }
