@@ -49,6 +49,17 @@ class IceCreamControl extends React.Component {
     this.setState({ editing: true});
   };
 
+  handleEditingIceCreamInList = (iceCreamToEdit) => {
+    const editedMainIceCreamList = this.state.mainIceCreamList.filter(
+      (iceCream) => iceCream.id !== this.state.selectedIceCream.id) 
+      .concat(iceCreamToEdit);
+    this.setState({
+      mainIceCreamList: editedMainIceCreamList,
+      editing: false,
+      selectedIceCream: null,
+    })
+  }
+
 
 }
 
