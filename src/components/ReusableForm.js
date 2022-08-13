@@ -11,7 +11,7 @@ function ReusableForm(props) {
         <br />
         <input type="text" name="description" placeholder="Decription" />
         <br />
-        <input type="number" min="1" name="quantity" placeholder="Quantity" />
+        <input type="number" min="130" name="quantity" placeholder="Quantity" />
         <br />
         <button type="submit">{props.buttonText}</button>
       </form>
