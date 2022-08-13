@@ -30,6 +30,7 @@ IceCream.propTypes = {
   flavor: PropTypes.string,
   description: PropTypes.string,
   quantity: PropTypes.number,
+  price: PropTypes.number,
   id: PropTypes.string,
   whenIceCreamClicked: PropTypes.func,
   whenBuyClicked: PropTypes.func,
