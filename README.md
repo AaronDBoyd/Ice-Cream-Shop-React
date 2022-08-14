@@ -1,77 +1,58 @@
 # Dew Drop's Ice Cream Shop
 
----
+A react app that displays and keeps track of a an ice cream shops inventory.
+#### By Aaron Boyd
+
+## Technologies Used
+
+* React
+* JavaScript
+* NPM
+* HTML
+* CSS
+
+## Description:
+This is a basic demonstration of creating a React application with CRUD functionality. 
+
+A user can Create, Update and Delete a flavor of ice cream with a specific price and description.
+
+If a user does not fill out a section of the form for creating an ice cream flavor, the program will autofill default values.
+If a user does not fill out a section of the update form, the program will use the previous value of the ice cream.
+
+# Home Page (Ice Cream List)
+
+![Ice Cream List](IceCreamList.PNG)
+
 # Component Tree
 
 ![Component Tree](IceCreamShopDiagram.png)
 
-# Getting Started with Create React App
+## Setup/Installation Requirements
+* _Go to [GitHub](https://github.com/AaronDBoyd/Ice-Cream-Shop-React.git)_
+* _Clone git repository to local machine_
+```
+$ git clone https://github.com/AaronDBoyd/Ice-Cream-Shop-React.git
+```
+* _Navigate to root folder and open directory in your terminal_
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Build Environment
+* _Install packages:_
+```
+$ npm install
+```
 
-## Available Scripts
+#### Server:
+* _Start server:_
+```
+$ npm start
+```
 
-In the project directory, you can run:
+## Known Bugs
 
-### `npm start`
+* No known bugs.
+* If you notice any mistakes or bugs, please email a.boyd91@yahoo.com
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## License
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[MIT](https://opensource.org/licenses/MIT)
+Copyright 2022 (c) Aaron Boyd 
