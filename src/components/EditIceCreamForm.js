@@ -7,11 +7,15 @@ function EditIceCreamForm(props) {
 
   function handleEditIceCreamFormSubmission(event) {
     event.preventDefault();
+    const flavor = !event.target.flavor.value ? iceCream.flavor : event.target.flavor.value;
+    const price = !event.target.price.value ? iceCream.price : parseInt(event.target.price.value);
+    const description = !event.target.description.value ? iceCream.description : event.target.description.value;
+
     props.onEditIceCream({
-      flavor: event.target.flavor.value,
-      price: parseInt(event.target.price.value),
-      description: event.target.description.value,
-      quantity: parseInt(event.target.quantity.value),
+      flavor: flavor,
+      price: price,
+      description: description,
+      quantity: 130,
       id: iceCream.id
     })
   }

@@ -6,11 +6,16 @@ import { v4 } from "uuid";
 function NewIceCreamForm(props) {
   function handleNewIceCreamFormSubmission(event) {
     event.preventDefault();
+    const flavor = !event.target.flavor.value ? "Mystery Flavor" : event.target.flavor.value;
+    const price = !event.target.price.value ? 13 : parseInt(event.target.price.value);
+    const description = !event.target.description.value ? "Ipsum Lorem Gibberish Blah Blah" : event.target.description.value;
+    
+
     props.onNewIceCreamCreation({
-      flavor: event.target.flavor.value,
-      price: parseInt(event.target.price.value),
-      description: event.target.description.value,
-      quantity: parseInt(event.target.quantity.value),
+      flavor: flavor,
+      price: price,
+      description: description,
+      quantity: 130,
       id: v4(),
     });
   }
