@@ -15,7 +15,7 @@ function EditIceCreamForm(props) {
       flavor: flavor,
       price: price,
       description: description,
-      quantity: 130,
+      quantity: iceCream.quantity,
       id: iceCream.id
     })
   }
