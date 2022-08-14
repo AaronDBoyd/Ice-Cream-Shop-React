@@ -5,20 +5,23 @@ import IceCream from "./IceCream";
 function IceCreamList(props) {
   return (
     <React.Fragment>
-      <h2>Ice Cream Selection</h2>
-      <hr />
-      {props.iceCreamList.map((iceCream) => (
-        <IceCream
-          whenBuyClicked={props.onClickingBuy}
-          whenIceCreamClicked={props.onIceCreamSelection}
-          flavor={iceCream.flavor}
-          price={iceCream.price}
-          description={iceCream.description}
-          quantity={iceCream.quantity}
-          id={iceCream.id}
-          key={iceCream.id}
-        />
-      ))}
+      <h1>- Our Selection -</h1>
+      <div className="itemList">
+        {props.iceCreamList.map((iceCream) => (
+          <div className="items">
+            <IceCream
+              whenBuyClicked={props.onClickingBuy}
+              whenIceCreamClicked={props.onIceCreamSelection}
+              flavor={iceCream.flavor}
+              price={iceCream.price}
+              description={iceCream.description}
+              quantity={iceCream.quantity}
+              id={iceCream.id}
+              key={iceCream.id}
+            />
+          </div>
+        ))}
+      </div>
     </React.Fragment>
   );
 }

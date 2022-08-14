@@ -1,11 +1,10 @@
-import React from 'react';
-import IceCreamList from './IceCreamList';
-import IceCreamDetail from './IceCreamDetail';
-import NewIceCreamForm from './NewIceCreamForm';
-import EditIceCreamForm from './EditIceCreamForm';
+import React from "react";
+import IceCreamList from "./IceCreamList";
+import IceCreamDetail from "./IceCreamDetail";
+import NewIceCreamForm from "./NewIceCreamForm";
+import EditIceCreamForm from "./EditIceCreamForm";
 
 class IceCreamControl extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -26,7 +25,7 @@ class IceCreamControl extends React.Component {
     } else {
       this.setState((prevState) => ({
         formVisibleOnPage: !prevState.formVisibleOnPage,
-      }))
+      }));
     }
   };
 
@@ -35,30 +34,30 @@ class IceCreamControl extends React.Component {
     this.setState({
       mainIceCreamList: newMainIceCreamList,
       formVisibleOnPage: false,
-    })
-  }
+    });
+  };
 
   handleChangingSelectedIceCream = (id) => {
     const selectedIceCream = this.state.mainIceCreamList.filter(
-      (iceCream) => iceCream.id === id 
+      (iceCream) => iceCream.id === id
     )[0];
-    this.setState({ selectedIceCream: selectedIceCream})
-  }
+    this.setState({ selectedIceCream: selectedIceCream });
+  };
 
   handleEditClick = () => {
-    this.setState({ editing: true});
+    this.setState({ editing: true });
   };
 
   handleEditingIceCreamInList = (iceCreamToEdit) => {
-    const editedMainIceCreamList = this.state.mainIceCreamList.filter(
-      (iceCream) => iceCream.id !== this.state.selectedIceCream.id) 
+    const editedMainIceCreamList = this.state.mainIceCreamList
+      .filter((iceCream) => iceCream.id !== this.state.selectedIceCream.id)
       .concat(iceCreamToEdit);
     this.setState({
       mainIceCreamList: editedMainIceCreamList,
       editing: false,
       selectedIceCream: null,
-    })
-  }
+    });
+  };
 
   handleDeletingIceCream = (id) => {
     const newMainIceCreamList = this.state.mainIceCreamList.filter(
@@ -67,48 +66,53 @@ class IceCreamControl extends React.Component {
     this.setState({
       mainIceCreamList: newMainIceCreamList,
       selectedIceCream: null,
-    })
-  }
+    });
+  };
 
   handleBuyingIceCream = (id) => {
-    const selectedItem = this.state.mainIceCreamList.filter((iceCream) => iceCream.id === id)[0]
+    const selectedItem = this.state.mainIceCreamList.filter(
+      (iceCream) => iceCream.id === id
+    )[0];
     selectedItem.quantity -= 1;
 
-    const editedMainIceCreamList = this.state.mainIceCreamList.filter(
-      (iceCream) => iceCream.id !== id) 
+    const editedMainIceCreamList = this.state.mainIceCreamList
+      .filter((iceCream) => iceCream.id !== id)
       .concat(selectedItem);
 
     this.setState({
       mainIceCreamList: editedMainIceCreamList,
       editing: false,
       selectedIceCream: null,
-    })
-  }
+    });
+  };
 
   handleRestockClick = (id) => {
-    const selectedItem = this.state.mainIceCreamList.filter((iceCream) => iceCream.id === id)[0]
-    selectedItem.quantity += 10;
-    const editedMainIceCreamList = this.state.mainIceCreamList.filter(
-      (iceCream) => iceCream.id !== id) 
+    const selectedItem = this.state.mainIceCreamList.filter(
+      (iceCream) => iceCream.id === id
+    )[0];
+    selectedItem.quantity += 130;
+    const editedMainIceCreamList = this.state.mainIceCreamList
+      .filter((iceCream) => iceCream.id !== id)
       .concat(selectedItem);
 
     this.setState({
       mainIceCreamList: editedMainIceCreamList,
       editing: false,
       selectedIceCream: null,
-    })
-  }
+    });
+  };
 
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
 
     if (this.state.editing) {
-      currentlyVisibleState = 
-      <EditIceCreamForm
-        iceCream={this.state.selectedIceCream}
-        onEditIceCream={this.handleEditingIceCreamInList}
-      />
+      currentlyVisibleState = (
+        <EditIceCreamForm
+          iceCream={this.state.selectedIceCream}
+          onEditIceCream={this.handleEditingIceCreamInList}
+        />
+      );
       buttonText = "View Ice Cream List";
     } else if (this.state.selectedIceCream != null) {
       currentlyVisibleState = (
@@ -122,7 +126,9 @@ class IceCreamControl extends React.Component {
       buttonText = "View Ice Cream List";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = (
-        <NewIceCreamForm onNewIceCreamCreation={this.handleAddingIceCreamToList} />
+        <NewIceCreamForm
+          onNewIceCreamCreation={this.handleAddingIceCreamToList}
+        />
       );
       buttonText = "View Ice Cream List";
     } else {
@@ -140,12 +146,11 @@ class IceCreamControl extends React.Component {
       <React.Fragment>
         {currentlyVisibleState}
         <br />
-        <button onClick={this.handleClick}>{buttonText}</button> 
+        <br />
+        <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
   }
-
-
 }
 
 export default IceCreamControl;
