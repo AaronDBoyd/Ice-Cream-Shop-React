@@ -84,7 +84,7 @@ class IceCreamControl extends React.Component {
     selectedItem.quantity -= 1;
 
     let editedMainIceCreamList = this.state.mainIceCreamList
-      .filter((iceCream) => iceCream.id !== id)
+      .filter((iceCream) => iceCream.id !== id);
 
     editedMainIceCreamList.splice(index, 0, selectedItem);
 
@@ -99,11 +99,13 @@ class IceCreamControl extends React.Component {
     const selectedItem = this.state.mainIceCreamList.filter(
       (iceCream) => iceCream.id === id
     )[0];
+    const index = this.state.mainIceCreamList.indexOf(selectedItem);
     selectedItem.quantity += 130;
-    const editedMainIceCreamList = this.state.mainIceCreamList
-      .filter((iceCream) => iceCream.id !== id)
-      .concat(selectedItem);
+    let editedMainIceCreamList = this.state.mainIceCreamList
+      .filter((iceCream) => iceCream.id !== id);
 
+      editedMainIceCreamList.splice(index, 0, selectedItem);  
+      
     this.setState({
       mainIceCreamList: editedMainIceCreamList,
       editing: false,
